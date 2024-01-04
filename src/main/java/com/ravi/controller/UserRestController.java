@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ravi.exception.UserNotFoundException;
 import com.ravi.request.UserRequest;
 import com.ravi.response.UserResponse;
 import com.ravi.service.IUserService;
@@ -38,7 +37,7 @@ public class UserRestController {
 	}
 
 	@GetMapping(value = "/user/{userId}", produces = "application/json")
-	public ResponseEntity<UserResponse> getUser(@PathVariable("userId") Integer userId)throws UserNotFoundException {
+	public ResponseEntity<UserResponse> getUser(@PathVariable("userId") Integer userId){
 		UserResponse user = userService.getUser(userId);
 		return new ResponseEntity<UserResponse>(user, HttpStatus.OK);
 	}

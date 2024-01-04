@@ -2,7 +2,6 @@ package com.ravi.service;
 
 import java.util.List;
 
-import com.ravi.exception.UserNotFoundException;
 import com.ravi.request.UserRequest;
 import com.ravi.response.UserResponse;
 
@@ -12,5 +11,5 @@ public interface IUserService {
 
 	public List<UserResponse> getUsers();
 
-	public UserResponse getUser(Integer userId)throws UserNotFoundException;
+	public UserResponse getUser(Integer userId);
 }

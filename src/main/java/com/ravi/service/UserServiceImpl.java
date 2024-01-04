@@ -46,7 +46,7 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public UserResponse getUser(Integer userId) throws UserNotFoundException {
+	public UserResponse getUser(Integer userId){
 		UserResponse userResponse = new UserResponse();
 		User user = null;
 		Optional<User> byId = userRepository.findById(userId);
